@@ -26,7 +26,7 @@ const OnboardingStatus = React.createClass({
 
     let percentage = Math.round(
       ((org.onboardingTasks || []).filter(
-        t => t.status === 'complete'
+        task => task.status === 'complete'
       ).length) / TodoList.TASKS.length * 100
     ).toString();
     let style = {
@@ -97,7 +97,6 @@ const Header = React.createClass({
       logo = <span className="icon-sentry-logo-full"/>;
     }
 
-    let org = this.getOrganization();
     let requiredAction = getFirstRequiredAdminAction(org);
     let actionMessage = null;
 
